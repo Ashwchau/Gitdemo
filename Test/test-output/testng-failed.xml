@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="TestNG.Test.Day4">
+        <methods>
+          <include name="WebloginHomeLoan"/>
+        </methods>
+      </class> <!-- TestNG.Test.Day4 -->
+      <class name="TestNG.Test.Day3">
+        <methods>
+          <include name="Bfsuite"/>
+          <include name="befoclas"/>
+          <include name="WebloginCarLoan"/>
+          <include name="beforeevery"/>
+          <include name="afterevery"/>
+          <include name="afteclas"/>
+          <include name="MobilesignoutcarLoan"/>
+          <include name="APIcarLoan"/>
+        </methods>
+      </class> <!-- TestNG.Test.Day3 -->
+      <class name="TestNG.Test.Day1">
+        <methods>
+          <include name="afSyite"/>
+          <include name="lastexecution"/>
+          <include name="Demo"/>
+        </methods>
+      </class> <!-- TestNG.Test.Day1 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
