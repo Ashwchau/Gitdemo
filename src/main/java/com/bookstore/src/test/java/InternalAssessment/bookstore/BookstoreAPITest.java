@@ -17,7 +17,7 @@ public class BookstoreAPITest {
 				RestAssured.given()
 				.contentType("application/json")
 				.when()
-				.get("base_Url+\"/Books\"")
+				.get("baseURI+\"/Books\"")
 				.then()
 				.statusCode(200)
 				.log().all();
@@ -31,7 +31,7 @@ public class BookstoreAPITest {
 			.contentType("application/json")
 			.body(book)
 			.when()
-			.post("base_Url+\"/Books\"")
+			.post("baseURI+\"/Books\"")
 			.then()
 			.statusCode(400);
 	}
