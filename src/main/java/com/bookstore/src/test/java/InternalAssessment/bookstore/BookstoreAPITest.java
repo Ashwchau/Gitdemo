@@ -8,8 +8,7 @@ import io.restassured.http.ContentType;
 public class BookstoreAPITest {
 	@BeforeClass
 	public void setUp() {
-		RestAssured.baseURI= "https://bookstore.toolsqa.com/swagger/";
-		
+		RestAssured.baseURI= "https://bookstore.toolsqa.com/BookStore/v1/Books";
 	}
 	@Test
 	public void testGetBookDetails() {
@@ -17,7 +16,7 @@ public class BookstoreAPITest {
 				RestAssured.given()
 				.contentType("application/json")
 				.when()
-				.get("baseURI+\"/Books\"")
+				.get("")
 				.then()
 				.statusCode(200)
 				.log().all();
@@ -31,7 +30,7 @@ public class BookstoreAPITest {
 			.contentType("application/json")
 			.body(book)
 			.when()
-			.post("baseURI+\"/Books\"")
+			.post("")
 			.then()
 			.statusCode(400);
 	}
