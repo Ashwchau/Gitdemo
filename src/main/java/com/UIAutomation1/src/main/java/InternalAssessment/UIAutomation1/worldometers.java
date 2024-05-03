@@ -11,28 +11,28 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class worldometers {
-	public static void main(String[] args) throws InterruptedException{
 		// TODO Auto-generated method stub
+	static WebDriver driver;
+	public static void main(String[] args) throws InterruptedException {
+		
 		String xpath_current_population = "//div[@class='maincounter-number']/span[@class='rts-counter']";
 		String xpath_today_population = "//div[text()='Today']//parent::div//span[@class='rts-counter']";
 		String xpath_thisyear_population = "//div[text()='This year']//parent::div//span[@class='rts-counter']";
 		
 		String xpath_today_thisYear_population = "//div[text()='This year' or text()='Today']//parent::div//span[@class='rts-counter']";
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://www.worldometers.info/world-population/");
+		driver = new ChromeDriver();
+driver.get("https://www.worldometers.info/world-population/");
 		
 		int count = 1;
-		while(count<=20) {
+		while(count<=4) {
 			System.out.println(count + " sec");
-			if(count == 21) break;
+			if(count == 5) break;
 			
-		System.out.println("Current Population Count");
+		System.out.println("current population count");
 		printPopulationData(xpath_current_population);
 		
-		System.out.println("Today and This Year population count");
+		System.out.println("Today and This Year population coun");
 		printPopulationData(xpath_today_thisYear_population);
-		System.out.println("=");
 		Thread.sleep(1000);
 		count++;
 
@@ -40,13 +40,12 @@ public class worldometers {
 	}
 	
 	public static void printPopulationData(String locator) throws InterruptedException {
-
-		WebDriver driver = new ChromeDriver();
-		driver.findElements(By.xpath(locator))
+		driver
+			.findElements(By.xpath(locator))
 				.stream()
-						.forEach(a -> System.out.println(a.getText()));
-		driver.quit();
+						.forEach(e -> System.out.println(e.getText()));
 
 		}
+	
 
 }
