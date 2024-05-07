@@ -3,14 +3,27 @@ package Assessmentquestionone;
 public class ReverseString {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String string = "Hello World";
-		String reversedStr = "";
-		for(int i = string.length()-1;i>=0;i--) {
-			reversedStr = reversedStr + string.charAt(i);
-		}
-		System.out.println("Original string:"+string);
-		System.out.println("Reverse of given string:" + reversedStr);
-	}
+		String originalString = "Hello World";
+        	String reversedString = reverseString(originalString);
+        	System.out.println("Original String: " + originalString);
+        	System.out.println("Reversed String: " + reversedString);
+    	}
 
+    	public static String reverseString(String str) {
+        	char[] charArray = str.toCharArray();
+        	int left = 0;
+        	int right = charArray.length - 1;
+
+        	while (left < right) {
+            	char temp = charArray[left];
+            	charArray[left] = charArray[right];
+            	charArray[right] = temp;
+
+            	left++;
+            	right--;
+        	}
+
+        return new String(charArray);
+    }
 }
+
